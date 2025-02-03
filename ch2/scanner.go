@@ -6,7 +6,7 @@ import (
 )
 
 // Iterative scanning example
-func concurrent_scan(address string) {
+func non_concurrent_scan(address string) {
 	for i := 1; i < 1024; i++ {
 		addr := fmt.Sprintf("%s:%d", address, i)
 		conn, err := net.Dial("tcp", addr)
@@ -20,5 +20,5 @@ func concurrent_scan(address string) {
 
 func main() {
 	address := "scanme.nmap.org"
-	concurrent_scan(address)
+	non_concurrent_scan(address)
 }
